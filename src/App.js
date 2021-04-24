@@ -4,6 +4,7 @@ import VpnKeyIcon from '@material-ui/icons/VpnKey';
 
 import PasswordGenerator from './components/PasswordGenerator';
 import PasswordGeneratorSettings from './components/PasswordGeneratorSettings';
+import ResetPreferencesButton from './components/ResetPreferencesButton';
 
 import {
     DEFAULT_PASSWORD_LENGTH,
@@ -46,6 +47,7 @@ function App() {
                     Générer un mot de passe
                 </Button>
             </Grid>
+            <ResetPreferencesButton setOptions={setOptions} />
         </Container>
     );
 }

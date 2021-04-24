@@ -1,6 +1,6 @@
 import React from 'react';
-import { FormControl, FormControlLabel, FormGroup, FormLabel, Paper, Slider, Switch, Typography, Box, Checkbox } from '@material-ui/core'
-import { SPECIAL_CHARS_LIST } from '../config/defaults'
+import { FormControl, FormControlLabel, FormGroup, FormLabel, Paper, Slider, Switch, Typography, Box, Checkbox, Tooltip } from '@material-ui/core'
+import { CAPITAL_CHARS_LIST, SPECIAL_CHARS_LIST, NUMBER_LIST } from '../config/defaults'
 
 const PasswordGeneratorSettings = ({ options, setOptions }) => {
     const handleChange = (e) => {
@@ -29,14 +29,18 @@ const PasswordGeneratorSettings = ({ options, setOptions }) => {
             <FormControl component="fieldset">
                 <FormLabel component="legend">Sélectionnez les options de votre mot de passe sécurisé:</FormLabel>
                 <FormGroup>
-                    <FormControlLabel
-                        control={<Switch checked={options.capitals} onChange={handleChange} name="capitals" />}
-                        label="Avec des lettres majuscules"
-                    />
-                    <FormControlLabel
-                        control={<Switch checked={options.numbers} onChange={handleChange} name="numbers" />}
-                        label="Avec des chiffres"
-                    />
+                    <Tooltip title={CAPITAL_CHARS_LIST.split('').join(' ')} placement="right">
+                        <FormControlLabel
+                            control={<Switch checked={options.capitals} onChange={handleChange} name="capitals" />}
+                            label="Avec des lettres majuscules"
+                        />
+                    </Tooltip>
+                    <Tooltip title={NUMBER_LIST.split('').join(' ')} placement="right">
+                        <FormControlLabel
+                            control={<Switch checked={options.numbers} onChange={handleChange} name="numbers" />}
+                            label="Avec des chiffres"
+                        />
+                    </Tooltip>
                     <FormControlLabel
                         control={<Switch checked={options.specials} onChange={handleChange} name="specials" />}
                         label="Avec des caractères spéciaux"
@@ -68,7 +72,7 @@ const PasswordGeneratorSettings = ({ options, setOptions }) => {
                     </Box>
                 </FormGroup>
             </FormControl>
-        </Paper>
+        </Paper >
     )
 }
 

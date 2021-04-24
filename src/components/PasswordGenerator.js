@@ -71,10 +71,11 @@ const PasswordGenerator = ({
     // Remove undesired characters from seed string 
     excludedCharacters.split('').forEach(c => { seedString = seedString.replace(c, '') })
 
+    // Generate password
     const generatedPassword = generatePassword(seedString, passwordRandomLength)
 
-
     useEffect(() => {
+        // Select text so user can directly ctrl+c
         const codeElement = codeRef.current
         window.getSelection().setBaseAndExtent(codeElement, 0, codeElement, 1)
     }, [generatedPassword])
