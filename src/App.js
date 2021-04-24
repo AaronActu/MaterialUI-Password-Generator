@@ -16,6 +16,7 @@ import {
 
 
 function App() {
+    const [, forceRender] = useState({});
     const [options, setOptions] = useState({
         capitals: localStorage.getItem('capitals') !== null ? JSON.parse(localStorage.getItem('capitals')) : DEFAULT_INCLUDE_CAPITAL_CASE,
         numbers: localStorage.getItem('numbers') !== null ? JSON.parse(localStorage.getItem('numbers')) : DEFAULT_INCLUDE_NUMBER,
@@ -43,6 +44,7 @@ function App() {
                     color="secondary"
                     size="large"
                     startIcon={<VpnKeyIcon />}
+                    onClick={forceRender}
                 >
                     Générer un mot de passe
                 </Button>
