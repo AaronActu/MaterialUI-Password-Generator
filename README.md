@@ -2,6 +2,8 @@
 
 MaterialUI Password Generator is a simple app that allows you to generate secured and customizable passwords.
 
+Demo : [https://main.d14gqk4yyzw6rb.amplifyapp.com](https://main.d14gqk4yyzw6rb.amplifyapp.com/)
+
 **Any generated password is NOT registered.**
 
 ## Quick start
